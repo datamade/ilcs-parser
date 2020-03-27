@@ -140,7 +140,7 @@ def int_value(token):
     try:
         return int(token)
     except ValueError:
-        return None
+        return 0
 
 
 def parenthetical(token):
