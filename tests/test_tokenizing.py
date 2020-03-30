@@ -31,3 +31,13 @@ def test_parens():
 
 def test_hyphens():
     assert tokenize('foo-bar-baz') == ['foo', 'bar', 'baz']
+
+
+def test_strip_ilcs():
+    assert tokenize('720 ilcs 5/21') == ['720', '5', '/21']
+
+
+def test_strip_tlp_parens():
+    assert tokenize('625-5/11-501(a)(2) (tp337049) (att)') == [
+        '625', '5', '/11', '501', '(a)', '(2)', '(att)'
+    ]

@@ -8,6 +8,11 @@ import warnings
 from collections import OrderedDict
 import string
 
+# Labels are based on the Illinois Compiled Statutes numbering scheme:
+# https://ilga.gov/commission/lrb/lrbnew.htm#ILCS
+# SubSection and Attempted are included even though they are not technically
+# part of the spec, since it's often useful to compare these tokens
+
 LABELS = [
     'Chapter',
     'ActPrefix',
@@ -16,10 +21,10 @@ LABELS = [
     'Attempted'
 ]
 
-PARENT_LABEL  = 'TokenSequence'               # the XML tag for each labeled string
-GROUP_LABEL   = 'Collection'                  # the XML tag for a group of strings
-NULL_LABEL    = 'Null'                        # the null XML tag
-MODEL_FILE    = 'learned_settings.crfsuite'   # filename for the crfsuite settings file
+PARENT_LABEL  = 'Citation'
+GROUP_LABEL   = 'CitationCollection'
+NULL_LABEL    = 'Null'
+MODEL_FILE    = 'learned_settings.crfsuite'
 
 
 try:
@@ -75,6 +80,12 @@ def tokenize(raw_string):
 
     # Replace back slashes with forward slashes
     raw_string = re.sub(r"\\", "/", raw_string)
+
+    # Remove any instances of the string "ILCS"
+    raw_string = re.sub(r"ilcs", " ", raw_string, flags=re.IGNORECASE)
+
+    # Remove instances of stray IDs formatted like "(tp337049)"
+    raw_string = re.sub(r"\(tp[^\)]+\)", " ", raw_string, flags=re.IGNORECASE)
 
     re_tokens = re.compile(r"""
         [(\"'\/]*\b[^\s\/,.;#&()-]+\b[)]*  # ['720-5/8-4(a)'] -> ['720', '5', '/8', '4', '(a)']
