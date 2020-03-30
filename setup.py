@@ -16,6 +16,7 @@ setup(
     license='The MIT License: http://www.opensource.org/licenses/mit-license.php',
     install_requires=['python-crfsuite>=0.7',
                       'lxml'],
+    extras_require={'tests': ['pytest', 'parserator']},
     classifiers=[
         'Development Status :: 3 - Alpha',
         'Intended Audience :: Developers',
