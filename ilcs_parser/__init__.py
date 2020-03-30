@@ -55,6 +55,10 @@ def parse(raw_string):
     features = tokens2features(tokens)
 
     tags = TAGGER.tag(features)
+
+    # Strip semantic slashes from tokens
+    tokens = [re.sub("/", "", token) for token in tokens]
+
     return list(zip(tokens, tags))
 
 
