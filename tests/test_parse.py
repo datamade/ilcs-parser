@@ -13,23 +13,29 @@ def test_parse():
 
 
 def test_tag():
-    assert ilcs_parser.tag('720-550//402-d') == OrderedDict(
-        [
-            ('Chapter', '720'),
-            ('ActPrefix', '550'),
-            ('Section', '402'),
-            ('SubSection', 'd')
-        ]
+    assert ilcs_parser.tag('720-550//402-d') == (
+        OrderedDict(
+            [
+                ('Chapter', '720'),
+                ('ActPrefix', '550'),
+                ('Section', '402'),
+                ('SubSection', 'd')
+            ]
+        ),
+        'Citation'
     )
 
 
 def test_tag_complex():
-    assert ilcs_parser.tag('625-5/11-501(a)(2) (tp337049) (att)') == OrderedDict(
-        [
-            ('Chapter', '625'),
-            ('ActPrefix', '5'),
-            ('Section', '11'),
-            ('SubSection', '501 (a) (2)'),
-            ('Attempted', '(att)')
-        ]
+    assert ilcs_parser.tag('625-5/11-501(a)(2) (tp337049) (att)') == (
+        OrderedDict(
+            [
+                ('Chapter', '625'),
+                ('ActPrefix', '5'),
+                ('Section', '11'),
+                ('SubSection', '501 (a) (2)'),
+                ('Attempted', '(att)')
+            ]
+        ),
+        'Citation'
     )
