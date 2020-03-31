@@ -72,7 +72,9 @@ def tag(raw_string):
         component = component.strip(' ,;')
         tagged[token] = component
 
-    return tagged
+    citation_type = 'Citation'
+
+    return tagged, citation_type
 
 
 def tokenize(raw_string):
