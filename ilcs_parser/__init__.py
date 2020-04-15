@@ -10,15 +10,19 @@ import string
 
 # Labels are based on the Illinois Compiled Statutes numbering scheme:
 # https://ilga.gov/commission/lrb/lrbnew.htm#ILCS
-# SubSection and Attempted are included even though they are not technically
-# part of the spec, since it's often useful to compare these tokens
+# SubSection and the Attempted labels are included even though they are not
+# technically part of the spec, since it's often useful to compare these tokens
 
 LABELS = [
+    'AttemptedChapter',
+    'AttemptedActPrefix',
+    'AttemptedSection',
+    'AttemptedSubSection',
     'Chapter',
     'ActPrefix',
     'Section',
     'SubSection',
-    'Attempted'
+    'AttemptedSuffix'
 ]
 
 PARENT_LABEL  = 'Citation'
@@ -56,9 +60,6 @@ def parse(raw_string):
 
     tags = TAGGER.tag(features)
 
-    # Strip semantic punctuation from tokens
-    tokens = [re.sub("/|\(|\)", "", token) for token in tokens]
-
     return list(zip(tokens, tags))
 
 
@@ -84,9 +85,6 @@ def tokenize(raw_string):
         except:
             raw_string = str(raw_string)
 
-    # Replace back slashes with forward slashes
-    raw_string = re.sub(r"\\", "/", raw_string)
-
     # Remove any instances of the string "ILCS"
     raw_string = re.sub(r"ilcs", " ", raw_string, flags=re.IGNORECASE)
 
@@ -94,13 +92,11 @@ def tokenize(raw_string):
     raw_string = re.sub(r"\(tp[^\)]+\)", " ", raw_string, flags=re.IGNORECASE)
 
     re_tokens = re.compile(r"""
-        [(\"'\/]*\b[^\s\/,.;#&()-]+\b[)]*  # ['720-5/8-4(a)'] -> ['720', '5', '/8', '4', '(a)']
+        [^\s\/\\,.;#&()-]+  # ['720-5/8-4(a)'] -> ['720', '5', '8', '4', 'a']
     """, re.VERBOSE | re.UNICODE)
     tokens = re_tokens.findall(raw_string)
 
-    if not tokens:
-        return []
-    return tokens
+    return tokens if tokens else []
 
 
 def tokens2features(tokens):
@@ -116,12 +112,8 @@ def tokens2features(tokens):
         feature_sequence[-1]['next'] = current_features
         token_features['previous'] = previous_features
 
-        token_features['succeeds.slash'] = token.startswith('/')
-        feature_sequence[-1]['preceeds.slash'] = token_features['succeeds.slash']
-
         # DEFINE ANY OTHER FEATURES THAT ARE DEPENDENT UPON TOKENS BEFORE/AFTER
         # for example, a feature for whether a certain character has appeared previously in the token sequence
-
         feature_sequence.append(token_features)
         previous_features = current_features
 
@@ -148,7 +140,6 @@ def tokenFeatures(token):
         'letter': len(token_clean) == 1 and token_clean in string.ascii_lowercase,
         'integer.value': int_value(token),
         'length': len(token),
-        'parenthetical': parenthetical(token),
         'attempted': token_clean in ['att', 'attempted'],
     }
 
@@ -158,12 +149,6 @@ def int_value(token):
         return int(token)
     except ValueError:
         return 0
-
-
-def parenthetical(token):
-    re_parens = re.compile(r"\([^(]+\)")
-    tokens = re_parens.findall(token)
-    return tokens is not None
 
 
 def digits(token):
