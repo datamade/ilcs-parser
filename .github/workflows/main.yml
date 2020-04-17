@@ -4,7 +4,6 @@ on:
   push:
     branches:
     - master
-    - jfc/packaging
   pull_request:
     branches:
     - master
@@ -31,7 +30,7 @@ jobs:
     - name: Print GitHub ref
       run: echo $GITHUB_REF
   deploy:
-    if: github.event_name == 'push' && (startsWith(github.ref, 'refs/tags') || endsWith(github.ref, 'jfc/packaging'))
+    if: github.event_name == 'push' && (startsWith(github.ref, 'refs/tags') || endsWith(github.ref, 'master'))
     needs: test
     runs-on: ubuntu-latest
     steps:
@@ -46,7 +45,7 @@ jobs:
         parserator train training/labeled.xml ilcs_parser
         python setup.py sdist bdist_wheel
     - name: Publish to test PyPI
-      if: endsWith(github.ref, 'jfc/packaging')
+      if: endsWith(github.ref, 'master')
       uses: pypa/gh-action-pypi-publish@v1.1.0
       with:
         user: __token__
