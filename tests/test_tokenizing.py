@@ -17,16 +17,16 @@ def test_spaces():
 
 
 def test_forward_slashes():
-    assert tokenize('foo/bar') == ['foo', '/bar']
+    assert tokenize('foo/bar') == ['foo', 'bar']
 
 
 def test_back_slashes():
-    assert tokenize('foo\\bar') == ['foo', '/bar']
+    assert tokenize('foo\\bar') == ['foo', 'bar']
 
 
 def test_parens():
-    assert tokenize('foobar(a)') == ['foobar', '(a)']
-    assert tokenize('foobar(a)(b)') == ['foobar', '(a)', '(b)']
+    assert tokenize('foobar(a)') == ['foobar', 'a']
+    assert tokenize('foobar(a)(b)') == ['foobar', 'a', 'b']
 
 
 def test_hyphens():
@@ -34,10 +34,10 @@ def test_hyphens():
 
 
 def test_strip_ilcs():
-    assert tokenize('720 ilcs 5/21') == ['720', '5', '/21']
+    assert tokenize('720 ilcs 5/21') == ['720', '5', '21']
 
 
 def test_strip_tlp_parens():
     assert tokenize('625-5/11-501(a)(2) (tp337049) (att)') == [
-        '625', '5', '/11', '501', '(a)', '(2)', '(att)'
+        '625', '5', '11', '501', 'a', '2', 'att'
     ]
