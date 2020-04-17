@@ -48,7 +48,7 @@ def test_tag_complex():
                 ('ActPrefix', '5'),
                 ('Section', '11'),
                 ('SubSection', '501 a 2'),
-                ('Attempted', 'att')
+                ('AttemptedSuffix', 'att')
             ]
         ),
         'Citation'
