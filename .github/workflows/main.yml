@@ -27,3 +27,30 @@ jobs:
         pip install -e .[tests]
         parserator train training/labeled.xml ilcs_parser
         pytest
+  deploy:
+    if: github.event_name == 'push' && (startsWith(github.event.ref, 'refs/tags') || github.event.ref == 'jfc/packaging')
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+      with:
+        python-version: 3.8
+    - name: Build distribution files
+      run: |
+        pip install --upgrade pip setuptools wheel
+        pip install -e .[tests]
+        parserator train training/labeled.xml ilcs_parser
+        python setup.py sdist bdist_wheel
+    - name: Publish to test PyPI
+      if: github.event.ref == 'jfc/packaging'
+      uses: pypa/gh-action-pypi-publish@v1.1.0
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_password }}
+    - name: Publish to PyPI
+      if: startsWith(github.event.ref, 'refs/tags')
+      uses: pypa/gh-action-pypi-publish@v1.1.0
+      with:
+        user: __token__
+        password: ${{ secrets.pypi_password }}
