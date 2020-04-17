@@ -53,3 +53,21 @@ def test_tag_complex():
         ),
         'Citation'
     )
+
+
+def test_attempted_prefix():
+    assert ilcs_parser.tag('720-5/8-4 625-5/11-501(a)(2)') == (
+        OrderedDict(
+            [
+                ('AttemptedChapter', '720'),
+                ('AttemptedActPrefix', '5'),
+                ('AttemptedSection', '8'),
+                ('AttemptedSubSection', '4'),
+                ('Chapter', '625'),
+                ('ActPrefix', '5'),
+                ('Section', '11'),
+                ('SubSection', '501 a 2'),
+            ]
+        ),
+        'Citation'
+    )
