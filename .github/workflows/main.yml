@@ -4,6 +4,7 @@ on:
   push:
     branches:
     - master
+    - jfc/packaging
   pull_request:
     branches:
     - master
