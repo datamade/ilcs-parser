@@ -100,20 +100,25 @@ def tokenize(raw_string):
 
 
 def tokens2features(tokens):
+    # Record the number of tokens, since early tokens in longer strings tend to
+    # refer to Attempted charges.
+    num_tokens = len(tokens)
+    first_feature = tokenFeatures(tokens[0])
+    first_feature['num.tokens'] = num_tokens
+
     feature_sequence = [tokenFeatures(tokens[0])]
     previous_features = feature_sequence[-1].copy()
 
     for token in tokens[1:]:
         # set features for individual tokens (calling tokenFeatures)
         token_features = tokenFeatures(token)
+        token_features['num.tokens'] = num_tokens
         current_features = token_features.copy()
 
         # features for the features of adjacent tokens
         feature_sequence[-1]['next'] = current_features
         token_features['previous'] = previous_features
 
-        # DEFINE ANY OTHER FEATURES THAT ARE DEPENDENT UPON TOKENS BEFORE/AFTER
-        # for example, a feature for whether a certain character has appeared previously in the token sequence
         feature_sequence.append(token_features)
         previous_features = current_features
 
