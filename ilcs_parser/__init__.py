@@ -24,6 +24,8 @@ LABELS = [
     'SubSection',
     'AttemptedSuffix'
 ]
+ATTEMPTED_LABELS = [label for label in LABELS if label.startswith('Attempted')]
+CITATION_LABELS = [label for label in LABELS if not label.startswith('Attempted')]
 
 PARENT_LABEL  = 'Citation'
 GROUP_LABEL   = 'CitationCollection'
@@ -40,6 +42,26 @@ except IOError:
         'You must train the model (parserator train [traindata] [modulename]) '
         'to create the %s file before you can use the parse and tag methods' % MODEL_FILE
     )
+
+
+class CitationTag(tuple):
+    def __hash__(self):
+        return hash(tuple(self.get_hashable_rep()))
+
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.get_hashable_rep() == other.get_hashable_rep()
+        )
+
+    @property
+    def is_attempted(self):
+        return any(self[0].get(label) for label in ATTEMPTED_LABELS)
+
+    def get_hashable_rep(self):
+        hashable_rep = [self[0].get(label) for label in CITATION_LABELS]
+        hashable_rep.append(bool(self.is_attempted))
+        return tuple(hashable_rep)
 
 
 def parse(raw_string):
@@ -75,7 +97,7 @@ def tag(raw_string):
 
     citation_type = 'Citation'
 
-    return tagged, citation_type
+    return CitationTag([tagged, citation_type])
 
 
 def tokenize(raw_string):
