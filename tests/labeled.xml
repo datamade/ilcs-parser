@@ -1,4 +1,103 @@
 <CitationCollection>
-  <Citation><RawString>625 5/6-301.1b1</RawString><Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>6</Section> <SubSection>301</SubSection> <SubSection>1b1</SubSection></Citation>
-  <Citation><RawString>720 550.0/5-a</RawString><Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <ActPrefix>0</ActPrefix> <Section>5</Section> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>625 5/6-301.1b1</RawString><Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>/6</Section> <SubSection>301.1b1</SubSection></Citation>
+  <Citation><RawString>720 550.0/5-a</RawString><Chapter>720</Chapter> <ActPrefix>550.0</ActPrefix> <Section>/5</Section> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/1-1(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>1</Section> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/16-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-5/21-1-1-a-a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection></Citation>
+  <Citation><RawString>720-5/21-1-a-1-a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.2</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.2</SubSection></Citation>
+  <Citation><RawString>720 5/21-3-a-2                (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>3</SubSection> <SubSection>a</SubSection> <SubSection>2</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720 5/61-1-a-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>61</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/16-6</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>6</SubSection></Citation>
+  <Citation><RawString>720 55-4-c</RawString> <Chapter>720</Chapter> <ActPrefix>55</ActPrefix> <Section>4</Section> <SubSection>c</SubSection></Citation>
+  <Citation><RawString>720-550/4(e)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>4</Section> <SubSection>e</SubSection></Citation>
+  <Citation><RawString>720-5/21-1-1-a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection></Citation>
+  <Citation><RawString>720 / 5.0 /21-3a-1</RawString> <Chapter>720</Chapter> <ActPrefix>5.0</ActPrefix> <Section>21</Section> <SubSection>3a</SubSection> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720  5/16 1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/16-6</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>6</SubSection></Citation>
+  <Citation><RawString>720-550/4b</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>4b</Section></Citation>
+  <Citation><RawString>720-550/5(b)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>5</Section> <SubSection>b</SubSection></Citation>
+  <Citation><RawString>720 5/16-1(a((1)(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>625-5/4-102</RawString> <Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>4</Section> <SubSection>102</SubSection></Citation>
+  <Citation><RawString>720-5017-1b                   (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5017</ActPrefix> <Section>1b</Section> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-646/30</RawString> <Chapter>720</Chapter> <ActPrefix>646</ActPrefix> <Section>30</Section></Citation>
+  <Citation><RawString>720-5-20-2-a                  (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>20</Section> <SubSection>2</SubSection> <SubSection>a</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/21-1.3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection></Citation>
+  <Citation><RawString>720-5-16-1-a-4                (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>4</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/21-1.3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection></Citation>
+  <Citation><RawString>720/5/12-a                    (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>12</Section> <SubSection>a</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/21-1.2</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.2</SubSection></Citation>
+  <Citation><RawString>720-570/402a10.5              (att)</RawString> <Chapter>720</Chapter> <ActPrefix>570</ActPrefix> <Section>402a10.5</Section> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-550/5(b)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>5</Section> <SubSection>b</SubSection></Citation>
+  <Citation><RawString>720-5/18-2-a-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>18</Section> <SubSection>2</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/18-1(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>18</Section> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/16-a3-f</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>a3</SubSection> <SubSection>f</SubSection></Citation>
+  <Citation><RawString>720-5/16-6</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>6</SubSection></Citation>
+  <Citation><RawString>720 5/16-1a4c</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1a4c</SubSection></Citation>
+  <Citation><RawString>720-5/16-3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>3</SubSection></Citation>
+  <Citation><RawString>720-5/24-1.6-a-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>1.6</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/18-1(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>18</Section> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720 5/16 1 a 4</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>4</SubSection></Citation>
+  <Citation><RawString>720-5/16-3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>3</SubSection></Citation>
+  <Citation><RawString>720 5/16a-4a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16a</Section> <SubSection>4a</SubSection></Citation>
+  <Citation><RawString>720-5/16-6</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>6</SubSection></Citation>
+  <Citation><RawString>720-5/12-4 b 8</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>12</Section> <SubSection>4</SubSection> <SubSection>b</SubSection> <SubSection>8</SubSection></Citation>
+  <Citation><RawString>720-5/12-3.05(b.1)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>12</Section> <SubSection>3.05</SubSection> <SubSection>b.1</SubSection></Citation>
+  <Citation><RawString>720-5/550-4(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>550</Section> <SubSection>4</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-550/4(g)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>4</Section> <SubSection>g</SubSection></Citation>
+  <Citation><RawString>720-5/29d-29.9</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>29d</Section> <SubSection>29.9</SubSection></Citation>
+  <Citation><RawString>730-150/3a</RawString> <Chapter>730</Chapter> <ActPrefix>150</ActPrefix> <Section>3a</Section></Citation>
+  <Citation><RawString>730-154</RawString> <Chapter>730</Chapter> <ActPrefix>154</ActPrefix></Citation>
+  <Citation><RawString>720 5/16-1a5a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>1a5a</SubSection></Citation>
+  <Citation><RawString>720-5/16-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720 5\16a-3f</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16a</Section> <SubSection>3f</SubSection></Citation>
+  <Citation><RawString>720-5/16-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>16</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-150-3-a                   (att)</RawString> <Chapter>720</Chapter> <ActPrefix>150</ActPrefix> <Section>3</Section> <SubSection>a</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>730-150/6</RawString> <Chapter>730</Chapter> <ActPrefix>150</ActPrefix> <Section>6</Section></Citation>
+  <Citation><RawString>720-5/24-3.1a                 (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>3.1a</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/24-3.7</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>3.7</SubSection></Citation>
+  <Citation><RawString>720 5/21-1 1a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>1a</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.3</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection></Citation>
+  <Citation><RawString>720-550/4                     (att)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>4</Section> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-550/4(f)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>4</Section> <SubSection>f</SubSection></Citation>
+  <Citation><RawString>720-5/24-1.6-a-1              (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>1.6</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/24-1.1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>1.1</SubSection></Citation>
+  <Citation><RawString>720-5/21-3/a-2</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>3</SubSection> <SubSection>a</SubSection> <SubSection>2</SubSection></Citation>
+  <Citation><RawString>720-5/21-2</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>2</SubSection></Citation>
+  <Citation><RawString>720-5/26-1a3                  (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>26</Section> <SubSection>1a3</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>730-154</RawString> <Chapter>730</Chapter> <ActPrefix>154</ActPrefix></Citation>
+  <Citation><RawString>720-5/26-1a1                  (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>26</Section> <SubSection>1a1</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/28-4</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>28</Section> <SubSection>4</SubSection></Citation>
+  <Citation><RawString>720-5-24-5                    (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>24</Section> <SubSection>5</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720/5/21-1(1)(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>1</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.2</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.2</SubSection></Citation>
+  <Citation><RawString>720-550/2-b                   (att)</RawString> <Chapter>720</Chapter> <ActPrefix>550</ActPrefix> <Section>2</Section> <SubSection>b</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-646/56</RawString> <Chapter>720</Chapter> <ActPrefix>646</ActPrefix> <Section>56</Section></Citation>
+  <Citation><RawString>720-5.0/21-3-a-2              (con)</RawString> <Chapter>720</Chapter> <ActPrefix>5.0</ActPrefix> <Section>21</Section> <SubSection>3</SubSection> <SubSection>a</SubSection> <SubSection>2</SubSection> <SubSection>con</SubSection></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>625-5/4-102(a)(2)</RawString> <Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>4</Section> <SubSection>102</SubSection> <SubSection>a</SubSection> <SubSection>2</SubSection></Citation>
+  <Citation><RawString>720-5/19-4</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>19</Section> <SubSection>4</SubSection></Citation>
+  <Citation><RawString>720-500/3                     (att)</RawString> <Chapter>720</Chapter> <ActPrefix>500</ActPrefix> <Section>3</Section> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-690/1</RawString> <Chapter>720</Chapter> <ActPrefix>690</ActPrefix> <Section>1</Section></Citation>
+  <Citation><RawString>720-5/26-a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>26</Section> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/28-1(a)(5)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>28</Section> <SubSection>1</SubSection> <SubSection>a</SubSection> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-5/21-1.3(a)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1.3</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-5/21-1 1a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1</SubSection> <SubSection>1a</SubSection></Citation>
+  <Citation><RawString>720-5/19-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>19</Section> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/21-3-a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>3</SubSection> <SubSection>a</SubSection></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-5/21-1a</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>1a</SubSection></Citation>
+  <Citation><RawString>720-5/21-5</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>21</Section> <SubSection>5</SubSection></Citation>
+  <Citation><RawString>720-5/12-14-a-1               (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>12</Section> <SubSection>14</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/8-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>8</Section> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>720-5/12-9-a-1-1-i            (att)</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>12</Section> <SubSection>9</SubSection> <SubSection>a</SubSection> <SubSection>1</SubSection> <SubSection>1</SubSection> <SubSection>i</SubSection> <AttemptedSuffix>att</AttemptedSuffix></Citation>
+  <Citation><RawString>720-5/8-1</RawString> <Chapter>720</Chapter> <ActPrefix>5</ActPrefix> <Section>8</Section> <SubSection>1</SubSection></Citation>
+  <Citation><RawString>625-5/6-10107</RawString> <Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>6</Section> <SubSection>10107</SubSection></Citation>
+  <Citation><RawString>625-5/4-103</RawString> <Chapter>625</Chapter> <ActPrefix>5</ActPrefix> <Section>4</Section> <SubSection>103</SubSection></Citation>
 </CitationCollection>

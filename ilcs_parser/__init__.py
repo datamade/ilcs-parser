@@ -64,6 +64,14 @@ class CitationTag(tuple):
         return tuple(hashable_rep)
 
 
+def strip_semantic_punctuation(token):
+    """
+    Given a string token, remove its semantic puncutation (slashes).
+    """
+    stripped_token = re.sub(r"/", "", token)
+    return stripped_token
+
+
 def parse(raw_string):
     if not TAGGER:
         msg = '\nMISSING MODEL FILE: %s\n' % MODEL_FILE
@@ -82,9 +90,7 @@ def parse(raw_string):
 
     tags = TAGGER.tag(features)
 
-    # Strip semantic punctuation from tokens
-    tokens = [re.sub(r"/", "", token) for token in tokens]
-    tokens = [re.sub(r"\.", " ", token) for token in tokens]
+    tokens = [strip_semantic_punctuation(token) for token in tokens]
 
     return list(zip(tokens, tags))
 

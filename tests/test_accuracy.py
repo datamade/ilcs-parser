@@ -19,7 +19,9 @@ def test_accuracy():
             if element.tag == 'RawString':
                 raw_citation = element.text
             else:
-                confirmed_citation_parts.append((element.text, element.tag))
+                # Strip semantic punctuation
+                element_text = ilcs_parser.strip_semantic_punctuation(element.text)
+                confirmed_citation_parts.append((element_text, element.tag))
 
         parsed_citation = ilcs_parser.parse(raw_citation)
 
