@@ -82,6 +82,10 @@ def parse(raw_string):
 
     tags = TAGGER.tag(features)
 
+    # Strip semantic punctuation from tokens
+    tokens = [re.sub(r"/", "", token) for token in tokens]
+    tokens = [re.sub(r"\.", " ", token) for token in tokens]
+
     return list(zip(tokens, tags))
 
 
@@ -107,6 +111,9 @@ def tokenize(raw_string):
         except:
             raw_string = str(raw_string)
 
+    # Replace back slashes with forward slashes
+    raw_string = re.sub(r"\\", "/", raw_string)
+
     # Remove any instances of the string "ILCS"
     raw_string = re.sub(r"ilcs", " ", raw_string, flags=re.IGNORECASE)
 
@@ -114,7 +121,7 @@ def tokenize(raw_string):
     raw_string = re.sub(r"\(tp[^\)]+\)", " ", raw_string, flags=re.IGNORECASE)
 
     re_tokens = re.compile(r"""
-        [^\s\/\\,.;#&()-]+  # ['720-5/8-4(a)'] -> ['720', '5', '8', '4', 'a']
+        [\/]*\b[^\s\/,;#&()-]+  # ['720-5.0/8-4(a)'] -> ['720', '5.0', '/8', '4', 'a']
     """, re.VERBOSE | re.UNICODE)
     tokens = re_tokens.findall(raw_string)
 
@@ -140,6 +147,9 @@ def tokens2features(tokens):
         # features for the features of adjacent tokens
         feature_sequence[-1]['next'] = current_features
         token_features['previous'] = previous_features
+
+        token_features['succeeds.slash'] = token.startswith('/')
+        feature_sequence[-1]['preceeds.slash'] = token_features['succeeds.slash']
 
         feature_sequence.append(token_features)
         previous_features = current_features

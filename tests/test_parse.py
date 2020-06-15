@@ -75,7 +75,7 @@ def test_attempted_prefix():
 
 def test_tags_are_equal():
     tag_a = ilcs_parser.tag('720-550/402-d')
-    tag_b = ilcs_parser.tag('720 550 402.d')
+    tag_b = ilcs_parser.tag('720 550 402(d)')
     assert tag_a == tag_b
     assert tag_a in [tag_b]
 
