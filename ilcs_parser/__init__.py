@@ -10,16 +10,22 @@ import string
 
 # Labels are based on the Illinois Compiled Statutes numbering scheme:
 # https://ilga.gov/commission/lrb/lrbnew.htm#ILCS
-# SubSection and Attempted are included even though they are not technically
-# part of the spec, since it's often useful to compare these tokens
+# SubSection and the Attempted labels are included even though they are not
+# technically part of the spec, since it's often useful to compare these tokens
 
 LABELS = [
+    'AttemptedChapter',
+    'AttemptedActPrefix',
+    'AttemptedSection',
+    'AttemptedSubSection',
     'Chapter',
     'ActPrefix',
     'Section',
     'SubSection',
-    'Attempted'
+    'AttemptedSuffix'
 ]
+ATTEMPTED_LABELS = [label for label in LABELS if label.startswith('Attempted')]
+CITATION_LABELS = [label for label in LABELS if not label.startswith('Attempted')]
 
 PARENT_LABEL  = 'Citation'
 GROUP_LABEL   = 'CitationCollection'
@@ -36,6 +42,34 @@ except IOError:
         'You must train the model (parserator train [traindata] [modulename]) '
         'to create the %s file before you can use the parse and tag methods' % MODEL_FILE
     )
+
+
+class CitationTag(tuple):
+    def __hash__(self):
+        return hash(tuple(self.get_hashable_rep()))
+
+    def __eq__(self, other):
+        return (
+            self.__class__ == other.__class__ and
+            self.get_hashable_rep() == other.get_hashable_rep()
+        )
+
+    @property
+    def is_attempted(self):
+        return any(self[0].get(label) for label in ATTEMPTED_LABELS)
+
+    def get_hashable_rep(self):
+        hashable_rep = [self[0].get(label) for label in CITATION_LABELS]
+        hashable_rep.append(bool(self.is_attempted))
+        return tuple(hashable_rep)
+
+
+def strip_semantic_punctuation(token):
+    """
+    Given a string token, remove its semantic puncutation (slashes).
+    """
+    stripped_token = re.sub(r"/", "", token)
+    return stripped_token
 
 
 def parse(raw_string):
@@ -56,8 +90,7 @@ def parse(raw_string):
 
     tags = TAGGER.tag(features)
 
-    # Strip semantic punctuation from tokens
-    tokens = [re.sub("/|\(|\)", "", token) for token in tokens]
+    tokens = [strip_semantic_punctuation(token) for token in tokens]
 
     return list(zip(tokens, tags))
 
@@ -74,7 +107,7 @@ def tag(raw_string):
 
     citation_type = 'Citation'
 
-    return tagged, citation_type
+    return CitationTag([tagged, citation_type])
 
 
 def tokenize(raw_string):
@@ -94,22 +127,27 @@ def tokenize(raw_string):
     raw_string = re.sub(r"\(tp[^\)]+\)", " ", raw_string, flags=re.IGNORECASE)
 
     re_tokens = re.compile(r"""
-        [(\"'\/]*\b[^\s\/,.;#&()-]+\b[)]*  # ['720-5/8-4(a)'] -> ['720', '5', '/8', '4', '(a)']
+        [\/]*\b[^\s\/,;#&()-]+  # ['720-5.0/8-4(a)'] -> ['720', '5.0', '/8', '4', 'a']
     """, re.VERBOSE | re.UNICODE)
     tokens = re_tokens.findall(raw_string)
 
-    if not tokens:
-        return []
-    return tokens
+    return tokens if tokens else []
 
 
 def tokens2features(tokens):
+    # Record the number of tokens, since early tokens in longer strings tend to
+    # refer to Attempted charges.
+    num_tokens = len(tokens)
+    first_feature = tokenFeatures(tokens[0])
+    first_feature['num.tokens'] = num_tokens
+
     feature_sequence = [tokenFeatures(tokens[0])]
     previous_features = feature_sequence[-1].copy()
 
     for token in tokens[1:]:
         # set features for individual tokens (calling tokenFeatures)
         token_features = tokenFeatures(token)
+        token_features['num.tokens'] = num_tokens
         current_features = token_features.copy()
 
         # features for the features of adjacent tokens
@@ -118,9 +156,6 @@ def tokens2features(tokens):
 
         token_features['succeeds.slash'] = token.startswith('/')
         feature_sequence[-1]['preceeds.slash'] = token_features['succeeds.slash']
-
-        # DEFINE ANY OTHER FEATURES THAT ARE DEPENDENT UPON TOKENS BEFORE/AFTER
-        # for example, a feature for whether a certain character has appeared previously in the token sequence
 
         feature_sequence.append(token_features)
         previous_features = current_features
@@ -148,7 +183,6 @@ def tokenFeatures(token):
         'letter': len(token_clean) == 1 and token_clean in string.ascii_lowercase,
         'integer.value': int_value(token),
         'length': len(token),
-        'parenthetical': parenthetical(token),
         'attempted': token_clean in ['att', 'attempted'],
     }
 
@@ -158,12 +192,6 @@ def int_value(token):
         return int(token)
     except ValueError:
         return 0
-
-
-def parenthetical(token):
-    re_parens = re.compile(r"\([^(]+\)")
-    tokens = re_parens.findall(token)
-    return tokens is not None
 
 
 def digits(token):
