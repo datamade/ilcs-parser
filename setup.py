@@ -14,7 +14,7 @@ def readme():
 
 
 setup(
-    version='0.0.0',
+    version='0.1.0',
     author='DataMade',
     url='https://github.com/datamade/ilcs-parser',
     description='Probabilistic parser for tagging data that references the Illinois Compiled Statutes (ILCS).',
